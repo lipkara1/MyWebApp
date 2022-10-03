@@ -28,17 +28,18 @@ public class UsersRepositoryTests {
     @Test
     public void testCreateUsers() {
         Users user = new Users();
-        user.setEmail("giorgoslipka@gmail.com");
-        user.setFirstName("Giorgos");
-        user.setLastName("Lypopoulos");
+        user.setEmail("bachas.fanis@gmail.com");
+        user.setFirstName("Theofanis");
+        user.setLastName("Bachas");
         user.setAge(21);
+        user.setPassword("1234");
 
 
         Users savedUser = repo.save(user);
         Users existUser = entityManager.find(Users.class,savedUser.getId());
 
 
-        assertEquals(user.getEmail(), "giorgoslipka@gmail.com");
+        assertEquals(user.getEmail(), existUser.getEmail());
 
 
     }

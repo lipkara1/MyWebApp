@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<div class="container text-center">
+
+    <div>
+        <H1>User Registration-Sign Up</H1>
+    </div>
+    <form th:action="@{/process_register}" method="post"
+          style="max-width: 600px; margin: 0 auto;"
+          th:object="${user}">
+        <div class="m-3">
+
+            <div class="form-group row">
+                <span class="col-form-label col-4"><strong>First Name</strong></span>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Enter your First Name" th:field="*{firstName}"
+                           required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <span class="col-form-label col-4"><strong>Last Name</strong></span>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Enter your Last Name" th:field="*{lastName}"
+                           required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <span class="col-form-label col-4"><strong>Age</strong></span>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Enter your Age" th:field="*{age}" required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <span class="col-form-label col-4"><strong>E-mail</strong></span>
+                <div class="col-8">
+                    <input type="email" class="form-control" placeholder="Enter your E-mail" th:field="*{email}"
+                           required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <span class="col-form-label col-4"><strong>Username</strong></span>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Enter your Username" th:field="*{username}"
+                           required/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <span class="col-form-label col-4"><strong>Password</strong></span>
+                <div class="col-8">
+                    <input type="password" class="form-control" placeholder="Enter your Password" th:field="*{password}"
+                           required/>
+                </div>
+            </div>
+
+            <div>
+                <button type="Submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+</body>
+</html>
